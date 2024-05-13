@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZYA2 MOME</title>
+    <link rel="icon" type="image/x-icon" href="gu/fn.ico">
+</head>
+<body>
+  <body bgcolor="lightgreen">
+  <div class="main">
+<img src="zya2rogo.png" width=640 height=200 alt="zya2ホーム">
+<hr>
+  <p>こんにちは</p>
+<!--天気始め-->
+  今日のお天気
+<link rel="stylesheet" href="otenki.css">
+<div id="location">
+<div class="weatherForecast">
+  <div class="weather">
+    <div class="date">--/--(-)</div>
+    <img class="weatherImg">
+    <div class="weatherTelop">--</div>
+    <div><span class="tempMin">-℃</span>/<span class="tempMax">-℃</span></div>
+  </div>
+</div>
+<script>
+  for (let i = 0; i < 6; i++) {
+    const el = document.querySelector('.weather').cloneNode(true);
+    document.querySelector('.weatherForecast').appendChild(el);
+  }
+</script>
+<script src="otenki.js"></script>
+<!--天気終わり-->
+<!--ユーザーエージェント始め-->
+<p id="msg">あなたのユーザーエージェント</p>
+
+<script>
+let element = document.getElementById('msg');
+element.insertAdjacentHTML('afterend', '<p>' + navigator.userAgent + '</p>');
+</script>
+<!--ユーザーエージェント終わり-->
+現在の時間:
+<span id="view_clock"></span>
+<script type="text/javascript">
+timerID = setInterval('clock()',500); //0.5秒毎にclock()を実行
+
+function clock() {
+	document.getElementById("view_clock").innerHTML = getNow();
+}
+
+function getNow() {
+	var now = new Date();
+	var year = now.getFullYear();
+	var mon = now.getMonth()+1; //１を足すこと
+	var day = now.getDate();
+	var hour = now.getHours();
+	var min = now.getMinutes();
+	var sec = now.getSeconds();
+
+	//出力用
+	var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒"; 
+	return s;
+}
+</script>
+<br>
+<hr>
+<!--ツール始め-->
+  <h1>サービス</h1>
+  <a href="https://zya2.sytes.net/bbs/bbs39.cgi"target="_blank">BBS(掲示板)</a>
+<br>
+  <a href="https://zya2.sytes.net/sns/tegalog.cgi"target="_blank">SNS</a>
+<br>
+<a href="https://zya2.sytes.net/uploader/upload.cgi"target="_blank">File Uploader</a>
+<br>
+  <hr>
+  <!--ツール終わり-->
+<br>
+  2023~
+<br>
+<object data="https://zya2.sytes.net/kousin/inf3.cgi" width="500" height="200">
+<br>
+  </div>
+</body>
+</html>
