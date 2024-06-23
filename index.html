@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ｱｱｱｱｱｱ</title>
-  <meta charset="UTF-8">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ｱｱｱｱｱｱ</title>
+<style>
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -58,9 +59,8 @@
 </style>
 </head>
 <body>
-  <h1>このサイトはRenderで運用しています。</h1>
-  <p>なんだこのサイト  とりあえずペイントツールを張っときます</p>
-   <canvas id="canvas" width="800" height="600"></canvas>
+  <p>このサイトはRenderで運用しています。</p>
+  <canvas id="canvas" width="800" height="600"></canvas>
   <div class="tools">
     <label for="colorPicker">Color:</label>
     <input type="color" id="colorPicker" value="#000000">
@@ -75,7 +75,8 @@
   <div class="download-link">
     <button onclick="downloadDrawing()">Download Drawing</button>
   </div>
-   <script>
+
+  <script>
     const canvas = document.getElementById('canvas');
     const context = canvas.getContext('2d');
     let isDrawing = false;
